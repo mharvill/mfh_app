@@ -213,4 +213,5 @@ Type::build('timestamp')
  */
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
+    Plugin::load('YouTubeTheme', ['bootstrap' => true, 'routes' => true]);
 }

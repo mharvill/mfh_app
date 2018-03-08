@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Controller;
-class UsersController extends AppController
+class SpeakersController extends AppController
 {
   public function index()
   {
     $this->loadComponent('Paginator');
-    $users = $this->Paginator->paginate($this->Users->find());
-    $this->set(compact('users'));
+    $speakers = $this->Paginator->paginate($this->Speakers->find());
+    $this->set(compact('speakers'));
   }
   public function view($id = null)
   {
-      $user = $this->Users->findById($id)->first();
-      $this->set(compact('user'));
+      $speaker = $this->Speakers->findById($id)->first();
+      $this->set(compact('speaker'));
   }
 }

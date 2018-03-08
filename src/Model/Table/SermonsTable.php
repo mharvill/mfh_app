@@ -1,11 +1,12 @@
 <?php
-namespace App\Controller;
-class UsersController extends AppController
+namespace App\Model\Table;
+use Cake\ORM\Table;
+class SermonsTable extends Table
 {
-  public function index()
+  public function initialize(array $config)
   {
-    $this->loadComponent('Paginator');
-    $users = $this->Paginator->paginate($this->Users->find());
-    $this->set(compact('users'));
+    $this->hasMany('Videos');
+    $this->displayField('name');
+    $this->addBehavior('Timestamp');
   }
 }
